@@ -1,0 +1,13 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+#more-icon {
+    float: right;
+    width: 50px;
+}
+
+#menu-icon {
+    float: left;
+    width: 50px;
+}

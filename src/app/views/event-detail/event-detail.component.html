@@ -1,0 +1,20 @@
+<div *ngIf="this.event">
+    <h1>{{event.title}}</h1>
+    <h2>{{date}}</h2>
+    <p>{{event.description}}</p>
+</div>
+
+<button (click)="clickShowGoing()">Show Going</button>
+<button (click)="clickShowComments()">Show Comments</button>
+
+<div *ngIf="showGoing">
+    <div *ngFor="let user of goingList">
+        {{user}}
+    </div>
+</div>
+
+<div *ngIf="showComments">
+    <p *ngFor="let comment of commentList">
+        {{comment}}
+    </p>
+</div>
