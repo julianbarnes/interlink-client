@@ -5,9 +5,16 @@
 #more-icon {
     float: right;
     width: 50px;
+    margin-left: 20rem;
+    position: fixed;
+    right:
 }
 
 #menu-icon {
     float: left;
     width: 50px;
+}
+
+.menu-button {
+    margin-right: 2rem;
 }
