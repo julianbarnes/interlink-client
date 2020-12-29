@@ -19,7 +19,7 @@ export class EventsBrowseComponent implements OnInit {
 
   ngOnInit() {
     this.categoryForm = new FormControl('');
-    this.eventsService.getEvents().subscribe((response) => {
+    this.eventsService.getAllEvents().subscribe((response) => {
       this.allEvents = response.data;
       this.filterEvents();
     })
@@ -36,7 +36,7 @@ export class EventsBrowseComponent implements OnInit {
     }).filter(event => {
       const date = new Date(event.date).getDate();
       const today = new Date();
-      return date <= today.getDate() && event.category === this.categoryForm.value;; 
+      return date === today.getDate() && event.category === this.categoryForm.value;; 
     });
 
     this.upcomingEvents = this.allEvents.map((event, i) => {

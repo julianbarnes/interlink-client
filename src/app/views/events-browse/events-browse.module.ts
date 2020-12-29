@@ -5,7 +5,8 @@ import { EventsBrowseComponent } from './events-browse.component';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { MatFormField, MatFormFieldModule, MatSelect, MatSelectModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
-import { EventDetailComponent } from '../event-detail/event-detail.component'
+import { EventDetailComponent } from '../event-detail/event-detail.component';
+
 
 @NgModule({
   declarations: [EventsBrowseComponent, EventDetailComponent],
