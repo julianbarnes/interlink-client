@@ -10,7 +10,7 @@ import {EventsService} from '../../shared/services/events-service';
 export class EventsBrowseComponent implements OnInit {
 
   public allEvents: EventDetails[];
-  public currentEvents: EventDetails[];
+  public pastEvents: EventDetails[];
   public upcomingEvents: EventDetails[];
   public categoryForm: FormControl;
 
@@ -19,6 +19,7 @@ export class EventsBrowseComponent implements OnInit {
 
   ngOnInit() {
     this.categoryForm = new FormControl('');
+    //Get event works 
     this.eventsService.getEvents().subscribe((response) => {
       this.allEvents = response.data;
       this.filterEvents();
@@ -30,13 +31,13 @@ export class EventsBrowseComponent implements OnInit {
   }
 
   filterEvents() {
-    this.currentEvents = this.allEvents.map((event, i) => {
+    this.pastEvents = this.allEvents.map((event, i) => {
       event.category = i % 2 ? 'Bible Study' : 'Worship';
       return event;
     }).filter(event => {
       const date = new Date(event.date).getDate();
       const today = new Date();
-      return date === today.getDate() && event.category === this.categoryForm.value;; 
+      return date <= today.getDate() && event.category === this.categoryForm.value;; 
     });
 
     this.upcomingEvents = this.allEvents.map((event, i) => {

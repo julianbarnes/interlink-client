@@ -1,4 +1,4 @@
-<h1>Current Events</h1>
+<h1>Past Events</h1>
 <mat-form-field appearance="fill">
     <mat-label class="select-item">Favorite food</mat-label>
     <mat-select [formControl]="categoryForm" (selectionChange)="filterEvents()" class="select-item">
@@ -7,9 +7,9 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-<ng-container *ngIf="currentEvents">
+<ng-container *ngIf="pastEvents">
     <div class="container col-6">
-        <mat-card *ngFor="let event of currentEvents" class="example-item col-4 my-5" (click)="this.navigate(event)">
+        <mat-card *ngFor="let event of pastEvents" class="example-item col-4 my-5" (click)="this.navigate(event)">
             <ng-container *ngIf="event.category === categoryForm.value">
                 <mat-card-header>
                     <mat-card-title>{{event.title}}</mat-card-title>
@@ -24,14 +24,16 @@
     </div>
 </ng-container>
 <h1>Upcoming Events</h1>
-<div class="container col-6">
-    <mat-card *ngFor="let event of upcomingEvents" class="example-item col-4 my-5" (click)="this.navigate(event)">
-            <mat-card-header>
-                <mat-card-title>{{event.title}}</mat-card-title>
-                <mat-card-subtitle>{{event.date}}</mat-card-subtitle>
-                </mat-card-header>
-            <mat-card-content>
-                <p>{{event.description}}</p>
-            </mat-card-content>
-    </mat-card>
-</div>
+<ng-container *ngIf="upcomingEvents">
+    <div class="container col-6">
+        <mat-card *ngFor="let event of upcomingEvents" class="example-item col-4 my-5" (click)="this.navigate(event)">
+                <mat-card-header>
+                    <mat-card-title>{{event.title}}</mat-card-title>
+                    <mat-card-subtitle>{{event.date}}</mat-card-subtitle>
+                    </mat-card-header>
+                <mat-card-content>
+                    <p>{{event.description}}</p>
+                </mat-card-content>
+        </mat-card>
+    </div>
+</ng-container>
