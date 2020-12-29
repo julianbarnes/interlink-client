@@ -19,7 +19,7 @@ export class EventsBrowseComponent implements OnInit {
 
   ngOnInit() {
     this.categoryForm = new FormControl('');
-    this.eventsService.getAllEvents().subscribe((response) => {
+    this.eventsService.getEvents().subscribe((response) => {
       this.allEvents = response.data;
       this.filterEvents();
     })
