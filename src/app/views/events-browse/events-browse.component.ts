@@ -18,7 +18,7 @@ export class EventsBrowseComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.categoryForm = new FormControl('');
+    this.categoryForm = new FormControl('Worship');
     //Get event works 
     this.eventsService.getEvents().subscribe((response) => {
       this.allEvents = response.data;
