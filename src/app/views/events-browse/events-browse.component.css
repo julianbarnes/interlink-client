@@ -1,8 +1,16 @@
-  .example-item {
-    max-width: 400px;
-    height: 100%;
-  }
+/* .example-item {
+  max-width: 200px;
+  height: 20rem;
+  margin: 1rem;
+} */
+/* .select-item {
+  color: #000;
+} */
 
-.select-item {
-    color: #000;
+.container {
+  background-color: black;
+}
+
+h1,h2,h3,h4 {
+  color: #4084C2;
 }
