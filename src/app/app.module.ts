@@ -10,10 +10,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EventsBrowseModule } from './views/events-browse/events-browse.module';
 import { EventsService } from './shared/services/events-service';
 import { EventDetailComponent } from './views/event-detail/event-detail.component';
+import { RegisterComponent } from './views/register/register.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
