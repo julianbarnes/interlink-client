@@ -6,8 +6,7 @@
     float: right;
     width: 50px;
     margin-left: 20rem;
-    position: fixed;
-    right:
+    position: relative;
 }
 
 #menu-icon {
