@@ -12,11 +12,13 @@ export class EventsService {
     constructor(private http: HttpClient) {
     }
     public getEvents(): Observable<any> {
+        let mocked = true;
+        let mockserver = 'https://83f528c2-9eba-4a2f-8042-15a0aad0463e.mock.pstmn.io/events/all'
         let server = 'http://localhost:8000/events/all'
         // if (process.env.NODE_ENV === 'production') {
         //     server = 'https://interlink-server.herokuapp.com/events/all';
         // }
-        return this.http.get(server);
+        return this.http.get(mocked ? mockserver : server);
     }
     public getActiveEvents() {
 
