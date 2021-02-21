@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import {EventsService} from '../../shared/services/events-service';
+import { EventsService } from '../../shared/services/events-service';
 @Component({
   selector: 'app-events-browse',
   templateUrl: './events-browse.component.html',
@@ -11,8 +11,9 @@ export class EventsBrowseComponent implements OnInit {
 
   public allEvents: EventDetails[];
   public pastEvents: EventDetails[];
-  public upcomingEvents: EventDetails[];
+  public events: EventDetails[];
   public categoryForm: FormControl;
+  public categories: string[] = ['Bible Studies', 'Potluck','Community Development','Sports','Evangelistic','Social'];
 
   constructor(private eventsService: EventsService,
     private router: Router) { }
@@ -31,16 +32,7 @@ export class EventsBrowseComponent implements OnInit {
   }
 
   filterEvents() {
-    this.pastEvents = this.allEvents.map((event, i) => {
-      event.category = i % 2 ? 'Bible Study' : 'Worship';
-      return event;
-    }).filter(event => {
-      const date = new Date(event.date).getDate();
-      const today = new Date();
-      return date <= today.getDate() && event.category === this.categoryForm.value;; 
-    });
-
-    this.upcomingEvents = this.allEvents.map((event, i) => {
+    this.events = this.allEvents.map((event, i) => {
         event.category = i % 2 ? 'Bible Study' : 'Worship';
         return event;
       }).filter(event => {
@@ -48,7 +40,6 @@ export class EventsBrowseComponent implements OnInit {
         const today = new Date();
         return date > today.getDate() && event.category === this.categoryForm.value; 
       });console.log(this.categoryForm)
-    // console.log(this.upcomingEvents[0].category)
   }
 
 }

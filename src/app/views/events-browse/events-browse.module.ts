@@ -7,10 +7,16 @@ import { MatButtonModule, MatFormField, MatFormFieldModule, MatIconModule, MatSe
 import { ReactiveFormsModule } from '@angular/forms';
 import { EventDetailComponent } from '../event-detail/event-detail.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { EventScrollComponent } from './event-scroll/event-scroll.component';
+import { EventCategoriesComponent } from './event-categories/event-categories.component';
+import { CategoryCardComponent } from './event-categories/category-card/category-card.component';
+import { AccountComponent } from './account/account.component';
+import { CategoryBarComponent } from './category-bar/category-bar.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 
 @NgModule({
-  declarations: [EventsBrowseComponent, EventDetailComponent],
+  declarations: [EventsBrowseComponent, EventDetailComponent, EventScrollComponent, EventCategoriesComponent, CategoryCardComponent, AccountComponent, CategoryBarComponent, DropdownComponent],
   imports: [
     CommonModule,
     MatCardModule,

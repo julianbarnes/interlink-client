@@ -1,79 +1,22 @@
 <div class="container">
     <!-- Account Component -->
-    <div class="row m-3">
-        <h1 class="col-2 mr-4">
-            <mat-icon [inline]="true" class="md-36">account_circle</mat-icon>
-        </h1>
-        <div class="col-8 mx-auto" id="profile_data">
-            <div class="row">
-                <h2>
-                    John Doe
-                </h2>
-            </div>
-            <div class="row">
-                <h4>San Francisco, CA</h4>
-            </div>
-        </div>
-        <h1 class="col-2" id="add_button">
-            <mat-icon>add_circle</mat-icon>
-        </h1>
-    </div>
+    <app-account></app-account>
     <!-- Navbar  -->
-    <mat-button-toggle-group class="col-12 offset-md-3" name="fontStyle" aria-label="Font Style">
-        <mat-button-toggle class="col-3 mx-auto" value="underline"><mat-icon>home</mat-icon></mat-button-toggle>
-        <mat-button-toggle class="col-3 mx-auto" value="bold"><mat-icon>dashboard</mat-icon></mat-button-toggle>
-        <mat-button-toggle class="col-3 mx-auto" value="italic"><mat-icon>camera_alt</mat-icon></mat-button-toggle>
-        <mat-button-toggle class="col-3 mx-auto" value="underline"><mat-icon>my_location</mat-icon></mat-button-toggle>
-    </mat-button-toggle-group>
-    
+    <app-category-bar></app-category-bar>
     <!-- Category Switcher -->
-    <mat-form-field class="col-12" appearance="fill">
-        <mat-label class="select-item">Event Category</mat-label>
-        <mat-select [formControl]="categoryForm" (selectionChange)="filterEvents()" class="select-item text-dark">
-            <mat-option *ngFor="let category of ['Bible Study', 'Worship']" [value]="category">
-                {{category}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-    <ng-container *ngIf="pastEvents">
-        <div class="container col-10">
-            <mat-card *ngFor="let event of pastEvents" class="example-item col-12 my-5" (click)="this.navigate(event)">
-                <ng-container *ngIf="event.category === categoryForm.value">
-                    <mat-card-header>
-                        <mat-card-title>{{event.title}}</mat-card-title>
-                        <mat-card-subtitle>{{event.date}}</mat-card-subtitle>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <p>{{event.location ? event.location : 'Atlanta'}}</p>
-                        <img src="https://images.unsplash.com/photo-1610824771380-390c72f79f11?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80" alt="concert image">
-                        <p>{{event.description}}</p>
-                    </mat-card-content>
-                </ng-container>
-            </mat-card>
-        </div>
-    </ng-container>
+    <app-dropdown></app-dropdown>
+
     <div class="container row">
         <div class="col-8"><h1>Upcoming Events</h1></div>
         <div class="col-4"><a href="">View More</a></div>
     </div>
-    <ng-container *ngIf="upcomingEvents">
-        <div class="container col-10">
-            <mat-card *ngFor="let event of upcomingEvents" class="example-item col-12 my-5"
-                (click)="this.navigate(event)">
-                <!-- <mat-card-header>
-                    <mat-card-title>{{event.title}}</mat-card-title>
-                    <mat-card-subtitle>{{event.date}}</mat-card-subtitle>
-                </mat-card-header> -->
-                <mat-card-content>
-                    <!-- <p>{{event.location ? event.location : 'Atlanta'}}</p> -->
-                    <img class="img-thumbnail" src="https://images.unsplash.com/photo-1610824771380-390c72f79f11?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80" alt="concert image">
-                    <p>{{event.description}}</p>
-                </mat-card-content>
-                <mat-card-actions class="col-12">
-                    <button class="text-primary mx-auto" mat-button>LIKE</button>
-                    <button class="text-primary mx-auto" mat-button>SHARE</button>
-                </mat-card-actions>
-            </mat-card>
-        </div>
+    <ng-container *ngIf="events">
+        <app-event-scroll [events]="this.events" [navigateFunction]="this.navigate.bind(this)"></app-event-scroll>
     </ng-container>
+
+    <h1>Top Events</h1>
+    <app-event-categories [categories]="this.categories"></app-event-categories>
+    
+    <h1>Event Browse</h1>
+    <app-event-categories [categories]="this.categories"></app-event-categories>
 </div>

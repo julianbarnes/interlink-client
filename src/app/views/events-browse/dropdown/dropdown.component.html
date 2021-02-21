@@ -1,0 +1,8 @@
+<mat-form-field class="col-12" appearance="fill">
+    <mat-label class="select-item">Event Category</mat-label>
+    <mat-select [formControl]="categoryForm" (selectionChange)="filterEvents()" class="select-item text-dark">
+        <mat-option *ngFor="let category of ['Bible Study', 'Worship']" [value]="category">
+            {{category}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
