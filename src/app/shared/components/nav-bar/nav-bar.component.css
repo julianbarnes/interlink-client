@@ -1,19 +1,12 @@
-.example-spacer {
-    flex: 1 1 auto;
-}
-
-#more-icon {
+.more-icon {
     float: right;
     width: 50px;
     margin-left: 20rem;
     position: relative;
 }
 
-#menu-icon {
-    float: left;
-    width: 50px;
-}
-
 .menu-button {
     margin-right: 2rem;
+    float: left;
+    width: 50px;
 }

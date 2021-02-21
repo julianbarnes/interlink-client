@@ -52,7 +52,10 @@
             </mat-card>
         </div>
     </ng-container>
-    <h1>Upcoming Events</h1>
+    <div class="container row">
+        <div class="col-8"><h1>Upcoming Events</h1></div>
+        <div class="col-4"><a href="">View More</a></div>
+    </div>
     <ng-container *ngIf="upcomingEvents">
         <div class="container col-10">
             <mat-card *ngFor="let event of upcomingEvents" class="example-item col-12 my-5"
