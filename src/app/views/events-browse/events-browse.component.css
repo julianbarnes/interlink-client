@@ -1,3 +1,13 @@
+/* Tags */
+h1,h2,h3,h4 {
+  color: #4084C2;
+}
+
+/* Classes  */
+.container {
+  background-color: black;
+}
+
 /* .example-item {
   max-width: 200px;
   height: 20rem;
@@ -6,11 +16,3 @@
 /* .select-item {
   color: #000;
 } */
-
-.container {
-  background-color: black;
-}
-
-h1,h2,h3,h4 {
-  color: #4084C2;
-}

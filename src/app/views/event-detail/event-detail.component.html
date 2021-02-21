@@ -1,36 +1,41 @@
-<div *ngIf="this.event">
-    <button mat-raised-button class="row" routerLink="/event-browse">
-        <mat-icon class="col-1" [inline]="true">keyboard_arrow_left</mat-icon>
-    </button>
-    <img class="img-fluid" src="https://images.unsplash.com/photo-1610824771380-390c72f79f11?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80" alt="concert image">
-    <div class="row">
-        <mat-icon class="col-2 mx-4">favorite</mat-icon>
-        <span class="col-1">100</span>
-        <mat-icon class="col-2 mx-4">message</mat-icon>
-        <span class="col-1">40</span>
-        <mat-icon class="col-2 mx-2">send</mat-icon>
-        <mat-icon class="col-2 mx-3">more_horiz</mat-icon>
+<ng-container *ngIf="page === 'Details'">
+    <div *ngIf="this.event">
+        <button mat-raised-button class="row" routerLink="/event-browse">
+            <mat-icon class="col-1" [inline]="true">keyboard_arrow_left</mat-icon>
+        </button>
+        <img class="img-fluid" src="https://images.unsplash.com/photo-1610824771380-390c72f79f11?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80" alt="concert image">
+        <div class="row">
+            <mat-icon class="col-2 mx-4">favorite</mat-icon>
+            <span class="col-1">100</span>
+            <mat-icon class="col-2 mx-4">message</mat-icon>
+            <span class="col-1">40</span>
+            <mat-icon class="col-2 mx-2">send</mat-icon>
+            <mat-icon class="col-2 mx-3">more_horiz</mat-icon>
+        </div>
+        <h1 class="col-8" >{{event.title}}</h1>
+        <p>{{event.description}}</p>
+        <h1>Date:</h1>
+        <h4>{{date}}</h4>
+        <h1>Time:</h1>
+        <h4>Location</h4>
     </div>
-    <h1 class="col-8" >{{event.title}}</h1>
-    <p>{{event.description}}</p>
-    <h1>Date:</h1>
-    <h4>{{date}}</h4>
-    <h1>Time:</h1>
-    <h4>Location</h4>
-
-</div>
-
-<button (click)="clickShowGoing()">Show Going</button>
-<button (click)="clickShowComments()">Show Comments</button>
-
-<div *ngIf="showGoing">
-    <div *ngFor="let user of goingList">
-        {{user}}
+    
+    <button (click)="clickShowGoing()">Show Going</button>
+    <button (click)="clickShowComments()">Show Comments</button>
+    <button (click)="clickRegister()">Register</button>
+    
+    <div *ngIf="showGoing">
+        <div *ngFor="let user of goingList">
+            {{user}}
+        </div>
     </div>
-</div>
-
-<div *ngIf="showComments">
-    <p *ngFor="let comment of commentList">
-        {{comment}}
-    </p>
-</div>
+    
+    <div *ngIf="showComments">
+        <p *ngFor="let comment of commentList">
+            {{comment}}
+        </p>
+    </div>
+</ng-container>
+<ng-container *ngIf="page === 'Register'">
+    <mat-icon></mat-icon>
+</ng-container>
