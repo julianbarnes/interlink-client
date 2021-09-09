@@ -4,7 +4,7 @@
     <!-- Navbar  -->
     <app-category-bar></app-category-bar>
     <!-- Category Switcher -->
-    <app-dropdown></app-dropdown>
+    <app-dropdown [filterEvents]="this.filterEvents.bind(this)"></app-dropdown>
 
     <div class="container row">
         <div class="col-8"><h1>Upcoming Events</h1></div>
