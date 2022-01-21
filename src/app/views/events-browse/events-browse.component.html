@@ -1,8 +1,12 @@
-<div class="container">
+<div class="container-fluid">
     <!-- Account Component -->
-    <app-account></app-account>
+    <div class="row">
+        <app-account></app-account>
+    </div>
     <!-- Navbar  -->
-    <app-category-bar></app-category-bar>
+    <div class="row">
+        <app-category-bar></app-category-bar>
+    </div>
     <!-- Category Switcher -->
     <app-dropdown [filterEvents]="this.filterEvents.bind(this)"></app-dropdown>
 
