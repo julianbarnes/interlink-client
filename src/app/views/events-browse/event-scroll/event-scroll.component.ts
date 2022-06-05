@@ -16,6 +16,6 @@ export class EventScrollComponent implements OnInit {
   }
 
   public navigate(val: string) {
-    this.navigateFunction(val)
+    //this.navigateFunction(val)
   }
 }
