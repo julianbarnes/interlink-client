@@ -1,4 +1,4 @@
-class EventDetails {
+export class EventDetails {
     public _id: String;
     public title: String;
     public description: String;

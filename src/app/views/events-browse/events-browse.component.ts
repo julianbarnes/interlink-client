@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EventsService } from '../../shared/services/events-service';
+import { EventDetails } from '../../interfaces/event-details'
+
 @Component({
   selector: 'app-events-browse',
   templateUrl: './events-browse.component.html',

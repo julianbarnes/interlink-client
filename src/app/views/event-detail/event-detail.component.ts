@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { EventsService } from 'src/app/shared/services/events-service';
 import { switchMap } from 'rxjs/operators';
+import { EventDetails } from '../../interfaces/event-details'
 
 @Component({
   selector: 'app-event-detail',

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { EventDetails } from '../../../interfaces/event-details'
 
 @Component({
   selector: 'app-event-scroll',
