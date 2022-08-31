@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm i; node server.js",
-    "build": "ng build",
+    "start": "npm run build; node server.js",
+    "start:dev": "npm run build:dev; node server.js",
+    "build": "npm i; ng build",
+    "build:dev": "npm i; ng build --configuration=development",
     "test": "ng test",
     "lint": "ng lint",
     "local": "npm update; ng serve --host 0.0.0.0 --disable-host-check",
