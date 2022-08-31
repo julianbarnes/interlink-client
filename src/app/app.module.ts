@@ -11,11 +11,14 @@ import { EventsBrowseModule } from './views/events-browse/events-browse.module';
 import { EventsService } from './shared/services/events-service';
 import { EventDetailComponent } from './views/event-detail/event-detail.component';
 import { RegisterComponent } from './views/register/register.component';
+import { EventAddComponent } from './views/event-add/event-add.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent
+    RegisterComponent,
+    EventAddComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +27,8 @@ import { RegisterComponent } from './views/register/register.component';
     SharedModule,
     EventsBrowseModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [EventsService],
   bootstrap: [AppComponent]

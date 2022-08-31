@@ -1,0 +1,25 @@
+<div class="container">
+    <form novalidate (ngSubmit)="save()" [formGroup]="eventForm">
+        <div class="form-group">
+            <label for="title">
+                Title
+                <input id="titleId" formControlName="title" type="text"/>
+            </label>
+            <label for="description">
+                Description
+                <textarea id="descriptionId" formControlName="description" type="textarea"></textarea>
+            </label>
+            <label for="date">
+                Date
+                <input id="dateId" formControlName="date" type="text"/>
+            </label>
+            <label for="picture">
+                Picture
+                <input formControlName="picture" type="file"/>
+            </label>
+        </div>
+
+        <button id="upload">Upload</button>
+        
+    </form>
+</div>
