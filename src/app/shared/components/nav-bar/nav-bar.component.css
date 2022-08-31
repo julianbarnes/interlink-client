@@ -1,7 +1,6 @@
 .more-icon {
     float: right;
     width: 50px;
-    margin-left: 20rem;
     position: relative;
 }
 
@@ -9,4 +8,10 @@
     margin-right: 2rem;
     float: left;
     width: 50px;
+}
+.toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: darkgrey
 }
