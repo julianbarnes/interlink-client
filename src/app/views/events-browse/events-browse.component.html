@@ -31,8 +31,22 @@
     </ng-container>
 
     <h1>Top Events</h1>
-    <app-event-categories [categories]="this.categories"></app-event-categories>
+    <div class="container row">
+        <ng-container *ngFor="let category of categories">
+            <div class="col-sm-6 my-1">
+                <app-category-card [category]="category"></app-category-card>
+            </div>
+        </ng-container>
+    </div>
+    
     
     <h1>Event Browse</h1>
-    <app-event-categories [categories]="this.categories"></app-event-categories>
+    <div class="container row">
+        <ng-container *ngFor="let category of categories">
+            <div class="col-sm-6 my-1">
+                <app-category-card [category]="category"></app-category-card>
+            </div>
+        </ng-container>
+    </div>
+    
 </div>
