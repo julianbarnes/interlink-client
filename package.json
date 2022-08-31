@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build; node server.js",
+    "start": "nvm use 14.0.0; npm run build; node server.js",
     "start:dev": "npm run build:dev; node server.js",
     "build": "npm i; ng build",
     "build:dev": "npm i; ng build --configuration=development",
@@ -80,6 +80,6 @@
   },
   "engines": {
     "node": "16.14.2",
-    "npm": "6.9.0"
+    "npm": "8.5.0"
   }
 }
