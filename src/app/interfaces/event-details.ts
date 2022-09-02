@@ -1,12 +1,12 @@
 export class EventDetails {
-    public _id: String;
-    public title: String;
-    public description: String;
-    public location: String;
-    public category: String;
+    public _id: string;
+    public title: string;
+    public description: string;
+    public location: string;
+    public category: string;
     public date: Date;
     public picture: File;
-    public createdAt: String;
-    public updatedAt: String;
+    public createdAt: string;
+    public updatedAt: string;
     public __v: number;
 }
