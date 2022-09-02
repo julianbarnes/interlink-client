@@ -1,5 +1,5 @@
 import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { catchError, retry, mergeMap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EventDetails } from 'src/app/interfaces/event-details';
@@ -22,8 +22,21 @@ export class EventsService {
 
       return this.http.get(`${this.server}/events/active`);
     }
-    public addEvent(event: EventDetails) {
+    public addEvent(event: EventDetails, picture?: any) {
+      event.picture = picture;
+      
+      return this.addEventPicture(event, picture).pipe(
+        mergeMap( response => {
+          event.picture = response['picture']
+          return this.http.post(`${this.server}/events/add`, event)
+        })
+      )
 
-      return this.http.post(`${this.server}/events/add`, event)
+    }
+    private addEventPicture(event: EventDetails, picture: any): Observable<any> {
+      let formData = new FormData();
+      formData.set("title", event.title)
+      formData.append("picture", picture)
+      return this.http.post(`${this.server}/events/add-picture`, formData)
     }
 }
