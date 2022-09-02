@@ -4,7 +4,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component'
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
-import { ProfileCardComponent } from './components/profile-card/profile-card.component'
+import { ProfileCardComponent } from './components/profile-card/profile-card.component';
 
 @NgModule({
   declarations: [NavBarComponent, ProfileCardComponent],
