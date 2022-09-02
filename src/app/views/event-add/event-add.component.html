@@ -15,7 +15,7 @@
             </label>
             <label for="picture">
                 Picture
-                <input formControlName="picture" type="file"/>
+                <input formControlName="picture" (input)="fileChosen($event)" type="file"/>
             </label>
         </div>
 

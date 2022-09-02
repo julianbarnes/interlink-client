@@ -8,6 +8,7 @@ import { EventsService } from 'src/app/shared/services/events-service';
 })
 export class EventAddComponent implements OnInit {
   public eventForm: FormGroup
+  public file: File
   constructor(private fb: FormBuilder, private eventsService: EventsService) { }
 
   ngOnInit() {
@@ -20,11 +21,18 @@ export class EventAddComponent implements OnInit {
   }
 
   save() {
-    console.log(this.eventForm.value)
-    this.eventsService.addEvent(this.eventForm.value).subscribe((response) => {
+    console.log(this.file)
+    this.eventsService.addEvent(this.eventForm.value, this.file).subscribe((response) => {
       console.log(response)
       alert(JSON.stringify(response))
     })
+  }
+
+  fileChosen(event: any) {
+    if (event.target.value) {
+      this.file = <File>event.target.files[0]
+      console.log(event.target.files)
+    }
   }
 
 }
