@@ -33,6 +33,10 @@ export class EventsBrowseComponent implements OnInit {
     this.router.navigate(['/event-detail/'+event._id], {state: {data: event}});
   }
 
+  navigateToAdd() {
+    this.router.navigate(['events/add']);
+  }
+
   filterEvents() {
     this.events = this.allEvents
     // .map((event, i) => {

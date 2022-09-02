@@ -1,18 +1,18 @@
 <div class="container-fluid">
     <!-- Account Component -->
     <div class="row">
-        <app-account></app-account>
+        <button class="add-button" (click)="this.navigateToAdd()">Add Event</button>
     </div>
     <!-- Navbar  -->
-    <div class="row">
+    <!-- <div class="row">
         <app-category-bar></app-category-bar>
-    </div>
+    </div> -->
     <!-- Category Switcher -->
-    <app-dropdown [filterEvents]="this.filterEvents.bind(this)"></app-dropdown>
+    <!-- <app-dropdown [filterEvents]="this.filterEvents.bind(this)"></app-dropdown> -->
 
     <div class="container row">
         <div class="col-8"><h1>Upcoming Events</h1></div>
-        <div class="col-4"><a href="">View More</a></div>
+        <!-- <div class="col-4"><a href="">View More</a></div> -->
     </div>
     <ng-container *ngIf="events">
         <div class="container col-10">
@@ -34,7 +34,7 @@
         </div>
     </ng-container>
 
-    <h1>Top Events</h1>
+    <!-- <h1>Top Events</h1>
     <div class="container row">
         <ng-container *ngFor="let category of categories">
             <div class="col-sm-6 my-1">
@@ -51,6 +51,6 @@
                 <app-category-card [category]="category"></app-category-card>
             </div>
         </ng-container>
-    </div>
+    </div> -->
     
 </div>
