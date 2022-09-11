@@ -1,22 +1,25 @@
 <div class="container">
     <form novalidate (ngSubmit)="save()" [formGroup]="eventForm">
         <div class="form-group">
-            <label for="title">
-                Title
-                <input id="titleId" formControlName="title" type="text"/>
-            </label>
-            <label for="description">
-                Description
-                <textarea id="descriptionId" formControlName="description" type="textarea"></textarea>
-            </label>
-            <label for="date">
-                Date
-                <input id="dateId" formControlName="date" type="text"/>
-            </label>
-            <label for="picture">
-                Picture
-                <input formControlName="picture" (input)="fileChosen($event)" type="file"/>
-            </label>
+            <!-- Event Name -->
+            <mat-form-field appearance="fill">
+                <input id="titleId" formControlName="title" type="text" matInput placeholder="Event Name" value="">
+            </mat-form-field>
+            <!-- Event Address -->
+            <mat-form-field appearance="fill">
+                <input id="addressId" formControlName="address" type="text" matInput placeholder="Address" value="">
+            </mat-form-field>
+            
+            <!-- <mat-form-field appearance="fill">
+                <textarea matInput id="titleId"  id="descriptionId" formControlName="description" type="textarea" placeholder="Description"></textarea>
+            </mat-form-field> -->
+            
+            <mat-form-field appearance="fill">
+                <input matInput id="dateId" formControlName="date" type="text" placeholder="Date"/>
+            </mat-form-field>
+
+            <input formControlName="picture" (input)="fileChosen($event)" type="file"/>
+
         </div>
 
         <button id="upload">Upload</button>
