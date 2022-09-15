@@ -13,4 +13,5 @@ res.sendFile(path.join(__dirname+'/dist/interlink-client/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
+console.log("Listening on port " + process.env.PORT || 8080)
 app.listen(process.env.PORT || 8080);
