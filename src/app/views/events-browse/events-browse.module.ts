@@ -13,10 +13,11 @@ import { AccountComponent } from './account/account.component';
 import { CategoryBarComponent } from './category-bar/category-bar.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { TestComponent } from 'src/app/test/test.component';
 
 
 @NgModule({
-  declarations: [EventsBrowseComponent, EventDetailComponent, CategoryCardComponent, AccountComponent, CategoryBarComponent, DropdownComponent],
+  declarations: [EventsBrowseComponent, EventDetailComponent, CategoryCardComponent, AccountComponent, CategoryBarComponent, DropdownComponent, TestComponent],
   imports: [
     CommonModule,
     MatCardModule,
