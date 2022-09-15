@@ -45,7 +45,7 @@ h1,h2,h3,h4, p {
 }
 
 .box {
-  width: 6rem;
+  width: 30%;
   height: 6rem;
   background-color:#4084C2;
 }
@@ -53,13 +53,19 @@ h1,h2,h3,h4, p {
 .profile-bar {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-around;
   gap: 2rem;
 }
 
 .stat-bar {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
