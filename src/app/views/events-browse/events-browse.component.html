@@ -1,18 +1,33 @@
-<div class="container-fluid">
-    <!-- Account Component -->
-    <div class="row">
-        <button class="add-button" (click)="this.navigateToAdd()">Add Event</button>
+<div>
+    <!-- Navbar -->
+    <mat-toolbar class="toolbar" color="accent">
+        <a>
+          <mat-icon id="menu-icon" class="primary menu-button" aria-label="Example icon-button with menu icon" class="icon">menu</mat-icon>
+        </a>
+      <h1>Profile</h1>
+      <a>
+        <mat-icon class="primary icon more-icon" aria-label="Example icon-button with share icon">more_vert</mat-icon>
+      </a>
+    </mat-toolbar>
+    <!-- Profile -->
+    <div class="profile-bar row">
+        <div class="primary circle col-2"></div>
+        <div class="col col-6">
+            <p class="primary row">John Doe</p>
+            <p class="primary row">San Francisco California</p>
+        </div>
+        <div class="primary circle col-2"></div>
     </div>
-    <!-- Navbar  -->
-    <!-- <div class="row">
-        <app-category-bar></app-category-bar>
-    </div> -->
-    <!-- Category Switcher -->
-    <!-- <app-dropdown [filterEvents]="this.filterEvents.bind(this)"></app-dropdown> -->
+    <!-- Stats -->
+    <div class="stat-bar row">
+        <div class="box">140 Events</div>
+        <div class="box">24k Followers</div>
+        <div class="box">1,9000 Following</div>
+    </div>
 
     <div class="container row">
-        <div class="col-8"><h1>Upcoming Events</h1></div>
-        <!-- <div class="col-4"><a href="">View More</a></div> -->
+        <div class="col-8"><h1>Upcoming</h1></div>
+        <div class="col-4"><a href="">View More</a></div>
     </div>
     <ng-container *ngIf="events">
         <div class="container col-10">
