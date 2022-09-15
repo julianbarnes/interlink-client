@@ -24,11 +24,11 @@
 <button (click)="clickShowComments()">Show Comments</button>
 <button (click)="clickRegister()">Register</button>
 
-<div *ngIf="showGoing">
-    <div *ngFor="let user of goingList">
+<ng-container *ngIf="showGoing">
+    <p *ngFor="let user of goingList">
         {{user}}
-    </div>
-</div>
+    </p>
+</ng-container>
 
 <div *ngIf="showComments">
     <p *ngFor="let comment of commentList">
