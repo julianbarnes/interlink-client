@@ -13,6 +13,8 @@ import { EventDetailComponent } from './views/event-detail/event-detail.componen
 import { RegisterComponent } from './views/register/register.component';
 import { EventAddComponent } from './views/event-add/event-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TestComponent } from './test/test.component';
+import { AccountComponent } from './views/events-browse/account/account.component';
 
 @NgModule({
   declarations: [
