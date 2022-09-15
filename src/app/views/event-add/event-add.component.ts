@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { EventsService } from 'src/app/shared/services/events-service';
 @Component({
   selector: 'app-event-add',
@@ -9,7 +10,7 @@ import { EventsService } from 'src/app/shared/services/events-service';
 export class EventAddComponent implements OnInit {
   public eventForm: FormGroup
   public file: File
-  constructor(private fb: FormBuilder, private eventsService: EventsService) { }
+  constructor(private fb: FormBuilder, private eventsService: EventsService, private router: Router) { }
 
   ngOnInit() {
     this.eventForm = this.fb.group({
@@ -24,7 +25,9 @@ export class EventAddComponent implements OnInit {
     console.log(this.file)
     this.eventsService.addEvent(this.eventForm.value, this.file).subscribe((response) => {
       console.log(response)
-      alert(JSON.stringify(response))
+      this.navigateToEvents()
+    }, (error: any) => {
+      alert("There was an error")
     })
   }
 
@@ -33,6 +36,10 @@ export class EventAddComponent implements OnInit {
       this.file = <File>event.target.files[0]
       console.log(event.target.files)
     }
+  }
+
+  navigateToEvents() {
+    this.router.navigate(['events']);
   }
 
 }
