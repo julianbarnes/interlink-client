@@ -12,6 +12,7 @@ import { CategoryCardComponent } from './category-card/category-card.component';
 import { AccountComponent } from './account/account.component';
 import { CategoryBarComponent } from './category-bar/category-bar.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { DropdownComponent } from './dropdown/dropdown.component';
     MatButtonToggleModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    SharedModule
   ],
   exports: [MatCardModule]
 })
