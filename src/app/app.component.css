@@ -1,12 +1,22 @@
 .background-black {
-    background-color: grey;
+    background-color: rgb(44, 42, 42);
     margin-bottom: 10rem;
 }
 
 body {
     color: blue;
+    display: flex;
+    overflow:hidden;
 }
 
-icon {
+.icon {
     color: blue;
+}
+
+.primary {
+    color: blue;
+}
+
+.secondary {
+    color: white;
 }
