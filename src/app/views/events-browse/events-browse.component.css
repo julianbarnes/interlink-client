@@ -1,13 +1,59 @@
-/* Tags */
-h1,h2,h3,h4 {
+
+h1,h2,h3,h4, p {
   color: #4084C2;
 }
 
-/* Classes  */
+
 .container {
-  background-color: grey;
+  background-color: rgb(44, 42, 42);
 }
 
 .add-button {
   width: 100%
+}
+
+
+.more-icon {
+  float: right;
+  width: 50px;
+  position: relative;
+}
+
+.menu-button {
+  margin-right: 2rem;
+  float: left;
+  width: 50px;
+}
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(44, 42, 42) !important
+}
+
+.circle {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  background-color: #4084C2;
+}
+
+.box {
+  width: 6rem;
+  height: 6rem;
+  background-color:#4084C2;
+}
+
+.profile-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.stat-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 2rem;
 }
