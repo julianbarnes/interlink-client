@@ -16,6 +16,7 @@ export class EventsBrowseComponent implements OnInit {
   public events: EventDetails[];
   public categoryForm: FormControl;
   public categories: string[] = ['Bible Studies', 'Potluck','Community Development','Sports','Evangelistic','Social'];
+  public isAdmin = false;
 
   constructor(private eventsService: EventsService,
     private router: Router) { }
@@ -39,6 +40,7 @@ export class EventsBrowseComponent implements OnInit {
 
   filterEvents() {
     this.events = this.allEvents
+    console.log(this.events.map(event => event.approved))
     // .map((event, i) => {
     //     event.category = i % 2 ? 'Bible Study' : 'Worship';
     //     return event;
