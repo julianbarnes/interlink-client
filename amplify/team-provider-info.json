@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-interlinkclient-dev-142815-authRole",
+      "UnauthRoleArn": "arn:aws:iam::150489438901:role/amplify-interlinkclient-dev-142815-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::150489438901:role/amplify-interlinkclient-dev-142815-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-interlinkclient-dev-142815-deployment",
+      "UnauthRoleName": "amplify-interlinkclient-dev-142815-unauthRole",
+      "StackName": "amplify-interlinkclient-dev-142815",
+      "StackId": "arn:aws:cloudformation:us-east-1:150489438901:stack/amplify-interlinkclient-dev-142815/29347c40-39db-11ed-b8ef-0e798a649f1f",
+      "AmplifyAppId": "d2m4z6qhub377g"
+    },
+    "categories": {
+      "auth": {
+        "interlinkclientb59cdd3f": {}
+      }
+    }
+  }
+}

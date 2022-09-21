@@ -42,7 +42,6 @@
     "rxjs": "~6.4.0",
     "tls": "0.0.1",
     "tslib": "^1.14.1",
-    "typescript": "~3.5.3",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
@@ -75,9 +74,9 @@
     "nodemon": "^2.0.6",
     "protractor": "~5.4.0",
     "puppeteer": "^15.4.0",
-    "ts-node": "~7.0.0",
+    "ts-node": "^10.9.1",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3"
+    "typescript": "^4.8.3"
   },
   "engines": {
     "node": "16.14.2",
