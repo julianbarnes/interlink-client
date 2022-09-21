@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
-//import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
+import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
 
 
 import { SharedModule } from './shared/shared.module'
@@ -26,9 +26,8 @@ import { AccountComponent } from './views/events-browse/account/account.componen
     EventAddComponent
   ],
   imports: [
-    //AmplifyAuthenticatorModule,
-    BrowserModule,
-    AppRoutingModule,
+    AmplifyAuthenticatorModule,
+    BrowserModule,    AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
     EventsBrowseModule,
