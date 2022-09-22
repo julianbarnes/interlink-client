@@ -5,3 +5,20 @@ h1, h2, h3, h4, p {
 mat-icon {
     color: white;
 }
+
+mat-card {
+    background-color: black;
+}
+
+.action-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
