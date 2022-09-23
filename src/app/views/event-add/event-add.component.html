@@ -28,6 +28,10 @@
                 <input matInput id="endDateId" type="datetime-local" placeholder="start date">
             </mat-form-field>
 
+            <mat-form-field appearance="fill">
+                <input matInput id="locationId" formControlName="location" type="text" placeholder="location"/>
+            </mat-form-field>
+
             <input formControlName="picture" (input)="fileChosen($event)" type="file"/>
 
         </div>
