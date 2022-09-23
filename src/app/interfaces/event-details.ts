@@ -5,7 +5,8 @@ export class EventDetails {
     public url: string;
     public location: string;
     public category: string;
-    public date: Date;
+    public startDate: Date;
+    public endDate: Date;
     public picture: File;
     public approved: boolean;
     public createdAt: string;

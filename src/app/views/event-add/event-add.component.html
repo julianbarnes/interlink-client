@@ -19,11 +19,14 @@
             </mat-form-field>
             
             <mat-form-field appearance="fill">
-                <input matInput id="dateId" formControlName="date" [matDatepicker]="picker" placeholder="Choose a date">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
+                <label for="startDateId">Start Time</label>
+                <input matInput id="startDateId" formControlName="startDate" [matDatepicker]="picker"
+                type="datetime-local" placeholder="Choose a date">
             </mat-form-field>
-              
+            <mat-form-field>
+                <label for="endDateId">End Time</label>
+                <input matInput id="endDateId" type="datetime-local" placeholder="start date">
+            </mat-form-field>
 
             <input formControlName="picture" (input)="fileChosen($event)" type="file"/>
 

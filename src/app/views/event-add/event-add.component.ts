@@ -17,7 +17,8 @@ export class EventAddComponent implements OnInit {
       title: [''],
       description: [''],
       url: [''],
-      date: [''], 
+      startDate: [''],
+      endDate: [''], 
       picture: ['']
     })
   }
