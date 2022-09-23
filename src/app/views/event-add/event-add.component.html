@@ -21,11 +21,11 @@
             <mat-form-field appearance="fill">
                 <label for="startDateId">Start Time</label>
                 <input matInput id="startDateId" formControlName="startDate" [matDatepicker]="picker"
-                type="datetime-local" placeholder="Choose a date">
+                type="datetime-local" placeholder="Choose a start date">
             </mat-form-field>
-            <mat-form-field>
+            <mat-form-field appearance="fill">
                 <label for="endDateId">End Time</label>
-                <input matInput id="endDateId" type="datetime-local" placeholder="start date">
+                <input matInput id="endDateId" formControlName="endDate" [matDatepicker]="picker" type="datetime-local" placeholder="Choose a start date">
             </mat-form-field>
 
             <mat-form-field appearance="fill">
