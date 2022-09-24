@@ -39,16 +39,10 @@ export class EventsBrowseComponent implements OnInit {
   }
 
   filterEvents() {
-    this.events = this.allEvents.filter(event => event.approved || this.isAdmin)
-    console.log(this.events)
-    // .map((event, i) => {
-    //     event.category = i % 2 ? 'Bible Study' : 'Worship';
-    //     return event;
-    //   }).filter(event => {
-    //     const date = new Date(event.date).getDate();
-    //     const today = new Date();
-    //     return date > today.getDate() && event.category === this.categoryForm.value; 
-    //   });console.log(this.categoryForm)
+    let today = new Date()
+    // console.log(this.allEvents.map(event => typeof event.startDate))
+    this.events = this.allEvents.filter(event => (event.approved || this.isAdmin ) && new Date(event.startDate) > today)
+    
   }
 
 }
