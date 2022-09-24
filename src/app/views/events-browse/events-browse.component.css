@@ -71,6 +71,12 @@ h1,h2,h3,h4, p {
   /* height: 100vh; */
 }
 
-/* .events-container {
-  height: 100%;
-} */
+.events-container {
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+}
+
+.no-events {
+  height: 100vh;
+}
