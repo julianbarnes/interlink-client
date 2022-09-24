@@ -39,8 +39,8 @@ export class EventsBrowseComponent implements OnInit {
   }
 
   filterEvents() {
-    this.events = this.allEvents
-    console.log(this.events.map(event => event.approved))
+    this.events = this.allEvents.filter(event => event.approved || this.isAdmin)
+    console.log(this.events)
     // .map((event, i) => {
     //     event.category = i % 2 ? 'Bible Study' : 'Worship';
     //     return event;

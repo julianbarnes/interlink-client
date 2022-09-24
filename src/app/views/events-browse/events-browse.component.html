@@ -25,9 +25,9 @@
         <div class="col-4"><a href="">View More</a></div>
     </div>
     <ng-container *ngIf="events">
-        <div class="container col-10">
-            <ng-container *ngFor="let event of events">
-                <ng-container *ngIf="isAdmin || event.approved">
+        <div class="events-container col-10">
+            <ng-container *ngIf="events.length > 0; else noEvents">
+                <ng-container *ngFor="let event of events">
                     <mat-card  class="example-item col-12 my-5"
                     (click)="this.navigate(event)">
                         <mat-card-content>
@@ -46,6 +46,9 @@
                     </ng-container>
                 </ng-container>
             </ng-container>
+            <ng-template #noEvents>
+                <h1>No Upcoming Events</h1>
+            </ng-template>
         </div>
     </ng-container>
 
