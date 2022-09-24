@@ -4,7 +4,9 @@
         <a>
           <mat-icon id="menu-icon" class="primary menu-button" aria-label="Example icon-button with menu icon" class="icon">menu</mat-icon>
         </a>
-      <h1>Profile</h1>
+      <h1>Profile <ng-container *ngIf="isAdmin">
+        Admin
+      </ng-container></h1>
       <a>
         <mat-icon class="primary icon more-icon" aria-label="Example icon-button with share icon">more_vert</mat-icon>
       </a>
@@ -12,11 +14,11 @@
     <!-- Profile -->
     <app-account></app-account>
     <!-- Stats -->
-    <div class="stat-bar row">
+    <!-- <div class="stat-bar row">
         <div class="box">140 Events</div>
         <div class="box">24k Followers</div>
         <div class="box">1,9000 Following</div>
-    </div>
+    </div> -->
 
     <div class="container row">
         <div class="col-8"><h1>Upcoming</h1></div>
@@ -25,18 +27,23 @@
     <ng-container *ngIf="events">
         <div class="container col-10">
             <ng-container *ngFor="let event of events">
-                <ng-container *ngIf="event.picture">
+                <ng-container *ngIf="isAdmin || event.approved">
                     <mat-card  class="example-item col-12 my-5"
                     (click)="this.navigate(event)">
                         <mat-card-content>
                             <img class="img-thumbnail" [src]="event.picture" alt="concert image">
                             <p>{{event.description}}</p>
+                            <a [href]="event.url">{{event.url}}</a>
                         </mat-card-content>
                         <mat-card-actions class="col-12">
                             <button class="text-primary mx-auto" mat-button>LIKE</button>
                             <button class="text-primary mx-auto" mat-button>SHARE</button>
                         </mat-card-actions>
                     </mat-card>
+                    <ng-container *ngIf="isAdmin">
+                        <button>Approve</button>
+                        <button>Reject</button>
+                    </ng-container>
                 </ng-container>
             </ng-container>
         </div>

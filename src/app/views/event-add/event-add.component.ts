@@ -16,7 +16,10 @@ export class EventAddComponent implements OnInit {
     this.eventForm = this.fb.group({
       title: [''],
       description: [''],
-      date: [''], 
+      url: [''],
+      startDate: [''],
+      endDate: [''],
+      location: [''], 
       picture: ['']
     })
   }
