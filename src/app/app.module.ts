@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 
 import { SharedModule } from './shared/shared.module'
@@ -18,12 +18,20 @@ import { TestComponent } from './test/test.component';
 import { AccountComponent } from './views/events-browse/account/account.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { AuthInterceptor } from './auth.interceptor';
+import { LoginComponent } from './views/login/login.component';
+import { SecureComponent } from './views/secure/secure.component';
+import { NotFoundComponent } from './views/not-found/not-found.component';
+import { MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatPaginatorModule, MatProgressSpinnerModule, MatSortModule, MatTableModule } from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    EventAddComponent
+    EventAddComponent,
+    LoginComponent,
+    SecureComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -35,10 +43,25 @@ import { MatNativeDateModule } from '@angular/material/core';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatSortModule,
+    MatTableModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,
   ],
-  providers: [EventsService],
+  providers: [
+    EventsService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

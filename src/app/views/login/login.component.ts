@@ -12,33 +12,31 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 }
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
+  selector: 'app-login',
+  templateUrl: './login.component.html',
   styleUrls: ['./app.component.css']
 })
-export class RegisterComponent implements OnInit {
-  registerForm: FormGroup;
+export class LoginComponent implements OnInit {
+  loginForm: FormGroup;
   username = '';
   password = '';
-  name = '';
   isLoadingResults = false;
   matcher = new MyErrorStateMatcher();
   constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) { }
 
-  ngOnInit() {
-    this.registerForm = this.formBuilder.group({
+  ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
       username : [null, Validators.required],
-      password : [null, Validators.required],
-      name : [null, Validators.required]
+      password : [null, Validators.required]
     });
   }
 
   onFormSubmit(): void {
     this.isLoadingResults = true;
-    this.authService.register(this.registerForm.value)
-      .subscribe((res: any) => {
+    this.authService.login(this.loginForm.value)
+      .subscribe(() => {
         this.isLoadingResults = false;
-        this.router.navigate(['/login']).then(_ => console.log('You are registered now!'));
+        this.router.navigate(['/secure']).then(_ => console.log('You are secure now!'));
       }, (err: any) => {
         console.log(err);
         this.isLoadingResults = false;
