@@ -41,8 +41,9 @@ export class EventsBrowseComponent implements OnInit {
   filterEvents() {
     let today = new Date()
     // console.log(this.allEvents.map(event => typeof event.startDate))
-    this.events = this.allEvents.filter(event => (event.approved || this.isAdmin ) && new Date(event.startDate) > today)
-    
-  }
+    this.events = this.allEvents.filter(event =>
+      //(event.approved || this.isAdmin ) &&
+    new Date(event.startDate) > today)
+}
 
 }
