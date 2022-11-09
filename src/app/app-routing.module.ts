@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 import { TestComponent } from './test/test.component';
 import { EventAddComponent } from './views/event-add/event-add.component';
 import { EventDetailComponent } from './views/event-detail/event-detail.component';
