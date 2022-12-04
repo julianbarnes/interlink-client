@@ -2,12 +2,16 @@ h1, h2, h3, h4, p {
     color: white;
 }
 
+.title {
+    text-align: center;
+}
 mat-icon {
     color: white;
 }
 
-mat-card {
+.mat-card {
     background-color: black;
+    height: 100%;
 }
 
 .action-container {
@@ -17,8 +21,9 @@ mat-card {
     justify-content: center;
 }
 
-/* .flex-container {
+.flex-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-} */
+    height: 100rem;
+}

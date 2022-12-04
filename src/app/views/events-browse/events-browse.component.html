@@ -1,24 +1,46 @@
 <div class="flex-container">
+    <!-- Navbar -->
+    <!-- <mat-toolbar class="toolbar" color="accent">
+        <a>
+          <mat-icon id="menu-icon" class="primary menu-button" aria-label="Example icon-button with menu icon" class="icon">menu</mat-icon>
+        </a>
+      <h1>Profile <ng-container *ngIf="isAdmin">
+        Admin
+      </ng-container></h1>
+      <a>
+        <mat-icon class="primary icon more-icon" aria-label="Example icon-button with share icon">more_vert</mat-icon>
+      </a>
+    </mat-toolbar>
+    Profile
+    <app-account></app-account>
+    Stats -->
+    <!-- <div class="stat-bar row">
+        <div class="box">140 Events</div>
+        <div class="box">24k Followers</div>
+        <div class="box">1,9000 Following</div>
+    </div> -->
 
-    <div class="container row">
-        <div class="col-8"><h1>Upcoming</h1></div>
-        <div class="col-4"><a href="">View More</a></div>
-    </div>
+    <h1 class="mt-3">Adventlink</h1>
     <ng-container *ngIf="events">
         <div class="events-container col-10">
             <ng-container *ngIf="events.length > 0; else noEvents">
                 <ng-container *ngFor="let event of events">
-                    <mat-card  class="example-item col-12 my-5"
+                    <mat-card  class="card col-12 my-5"
                     (click)="this.navigate(event)">
                         <mat-card-content>
-                            <img class="img-thumbnail" [src]="event.picture" alt="concert image">
+                            <ng-container *ngIf="event.picture; else noPicture">
+                                <img class="img-thumbnail" [src]="event.picture" alt="concert image">
+                            </ng-container>
+                            <ng-template #noPicture>
+                                <h1>{{event.title}}</h1>
+                            </ng-template>
                             <p>{{event.description}}</p>
                             <a [href]="event.url">{{event.url}}</a>
                         </mat-card-content>
-                        <mat-card-actions class="col-12">
+                        <!-- <mat-card-actions class="col-12">
                             <button class="text-primary mx-auto" mat-button>LIKE</button>
                             <button class="text-primary mx-auto" mat-button>SHARE</button>
-                        </mat-card-actions>
+                        </mat-card-actions> -->
                     </mat-card>
                     <ng-container *ngIf="isAdmin">
                         <button>Approve</button>
