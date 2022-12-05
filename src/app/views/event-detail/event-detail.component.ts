@@ -42,8 +42,8 @@ export class EventDetailComponent implements OnInit {
         this.dateString = `${mo} ${da} ${ye}`;
       }
 
-      this.startDate = this.event.startDate ? new Date(this.event.startDate) : new Date();
-      this.endDate = this.event.endDate ? new Date(this.event.endDate) : new Date();
+      this.startDate = this.event.startDate ? this.event.startDate : new Date();
+      this.endDate = this.event.endDate ? this.event.endDate : new Date();
 
       //Calculate the start time
       let startHours = this.startDate.getHours() > 12 ? this.startDate.getHours() - 12 : this.startDate.getHours();
