@@ -28,7 +28,7 @@
     </ng-container>
     <ng-container *ngIf="events">
         <div class="events-container col-10">
-            <ng-container *ngIf="events.length > 0; else noEvents">
+            <ng-container *ngIf="events.length > 0">
                 <ng-container *ngFor="let event of events">
                     <mat-card  class="card col-12 my-5">
                     <!-- (click)="this.navigate(event)"> -->
