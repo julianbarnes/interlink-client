@@ -23,6 +23,9 @@
     <button (click)="this.navigateToAdd()" mat-fab matTooltip="Warn" class="col-4" color="warn" aria-label="Example fab with a heart icon">
         <mat-icon>add</mat-icon>
     </button>
+    <ng-container *ngIf="!events || events.length === 0">
+        <h1 class="no-events">No Upcoming Events</h1>
+    </ng-container>
     <ng-container *ngIf="events">
         <div class="events-container col-10">
             <ng-container *ngIf="events.length > 0; else noEvents">
@@ -50,9 +53,6 @@
                     </ng-container>
                 </ng-container>
             </ng-container>
-            <ng-template #noEvents>
-                <h1 class="no-events">No Upcoming Events</h1>
-            </ng-template>
         </div>
     </ng-container>
 
