@@ -27,8 +27,8 @@
         <div class="events-container col-10">
             <ng-container *ngIf="events.length > 0; else noEvents">
                 <ng-container *ngFor="let event of events">
-                    <mat-card  class="card col-12 my-5"
-                    (click)="this.navigate(event)">
+                    <mat-card  class="card col-12 my-5">
+                    <!-- (click)="this.navigate(event)"> -->
                         <mat-card-content>
                             <ng-container *ngIf="event.picture; else noPicture">
                                 <img class="img-thumbnail" [src]="event.picture" alt="concert image">
@@ -36,7 +36,7 @@
                             <ng-template #noPicture>
                                 <h1>{{event.title}}</h1>
                             </ng-template>
-                            <p>{{event.description}}</p>
+                            <!-- <p>{{event.description}}</p> -->
                             <a [href]="event.url">{{event.url}}</a>
                         </mat-card-content>
                         <!-- <mat-card-actions class="col-12">

@@ -5,6 +5,7 @@ h1,h2,h3,h4, p {
 
 .container {
   background-color: rgb(44, 42, 42);
+  width: 100vw;
 }
 
 .add-button {
@@ -68,6 +69,8 @@ h1,h2,h3,h4, p {
   flex-direction: column;
   gap: 2rem;
   align-items: center;
+  width: 100vw;
+
   /* height: 100vh; */
 }
 
@@ -81,11 +84,11 @@ h1,h2,h3,h4, p {
   height: 100vh;
 }
 .card {
-  width: 30rem;
+  width: 80vw;
   height: auto;
 }
 
 .img-thumbnail {
   height: 30rem;
-  width: 30rem;
+  width: 80vw;
 }
