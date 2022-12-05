@@ -14,12 +14,12 @@ export class EventAddComponent implements OnInit {
 
   ngOnInit() {
     this.eventForm = this.fb.group({
-      title: [''],
-      description: [''],
-      url: [''],
+      title: ['test'],
+      description: ['test'],
+      url: ['test'],
       startDate: [''],
-      endDate: [''],
-      location: [''], 
+      endDate: [new Date()],
+      location: ['test'], 
       picture: ['']
     })
   }
