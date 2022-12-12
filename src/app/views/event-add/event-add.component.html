@@ -33,23 +33,20 @@
             </mat-form-field> -->
 
             <mat-form-field appearance="fill">
-            <mat-label>Age Group</mat-label>
-            <select matNativeControl formControlName="ageGroup">
-                <option *ngFor="let group of ['Youth', 'Young Adult', 'Adult']" [value]="group.value">
-                {{group}}
-                </option>
-            </select>
+                <mat-label>Age Group</mat-label>
+                <mat-select formControlName="ageGroup">
+                    <mat-option *ngFor="let group of ['Youth', 'Young Adult', 'Adult']" [value]="group">
+                    {{group}}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
-
             <mat-form-field appearance="fill">
-            <mat-label>Category</mat-label>
-            <select matNativeControl formControlName="category">
-                <option value="social">Social</option>
-                <option value="bible study">Bible Study</option>
-                <option value="professional">Professional</option>
-                <option value="spiritual">Spiritual</option>
-                <option value="small group">Small Group</option>
-            </select>
+                <mat-label>Category</mat-label>
+                <mat-select formControlName="category">
+                    <mat-option *ngFor="let group of ['Social', 'Bible Study', 'Professional','Spiritual','Small Group']" [value]="group">
+                    {{group}}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
 
 

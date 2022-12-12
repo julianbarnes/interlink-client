@@ -16,6 +16,6 @@ import { ProfileCardComponent } from './components/profile-card/profile-card.com
     MatCardModule,
     MatSelectModule
   ],
-  exports: [ NavBarComponent, MatIconModule, MatToolbarModule ]
+  exports: [ NavBarComponent, MatIconModule, MatToolbarModule, MatSelectModule ]
 })
 export class SharedModule { }
