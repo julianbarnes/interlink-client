@@ -4,6 +4,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component'
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
 import { ProfileCardComponent } from './components/profile-card/profile-card.component';
 
 @NgModule({
@@ -12,7 +13,8 @@ import { ProfileCardComponent } from './components/profile-card/profile-card.com
     CommonModule,
     MatIconModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule
   ],
   exports: [ NavBarComponent, MatIconModule, MatToolbarModule ]
 })

@@ -5,6 +5,7 @@ export class EventDetails {
     public url: string;
     public location: string;
     public category: string;
+    public ageGroup: string;
     public startDate: Date;
     public endDate: Date;
     public picture: File;

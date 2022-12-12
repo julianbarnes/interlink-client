@@ -23,6 +23,26 @@
     <button (click)="this.navigateToAdd()" mat-fab matTooltip="Warn" class="col-4" color="warn" aria-label="Example fab with a heart icon">
         <mat-icon>add</mat-icon>
     </button>
+
+    <form class="form-group" novalidate [formGroup]="eventForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Age Group</mat-label>
+            <mat-select formControlName="ageGroup">
+                <mat-option *ngFor="let group of ['Youth', 'Young Adult', 'Adult']" [value]="group">
+                {{group}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="category">
+                <mat-option *ngFor="let group of ['Social', 'Bible Study', 'Professional','Spiritual','Small Group']" [value]="group">
+                {{group}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button matButton class="col-12"(click)="filterEvents()">Refresh</button>
+    </form>
     <ng-container *ngIf="!events || events.length === 0">
         <h1 class="no-events">No Upcoming Events</h1>
     </ng-container>

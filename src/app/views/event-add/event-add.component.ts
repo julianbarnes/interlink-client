@@ -20,7 +20,9 @@ export class EventAddComponent implements OnInit {
       startDate: [''],
       endDate: [new Date()],
       location: ['test'], 
-      picture: ['']
+      picture: [''],
+      ageGroup: [''],
+      category: ['']
     })
   }
 
