@@ -77,18 +77,18 @@ h1,h2,h3,h4, p {
 .events-container {
   flex-direction: column;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .no-events {
   height: 100vh;
 }
 .card {
-  width: 80vw;
+  width: 20rem;
   height: auto;
 }
 
 .img-thumbnail {
   height: 30rem;
-  width: 80vw;
+  width: 20rem;
 }
