@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "nvm use 14.0.0; npm run build; node server.js",
-    "start:dev": "npm run build:dev; node server.js",
+    "start": "npm run build; node server.js",
+    "start:dev": "nvm use 14.0.0; npm run build:dev; node server.js",
     "build": "npm i; ng build",
     "build:dev": "npm i; ng build --configuration=development",
     "test": "ng test",
